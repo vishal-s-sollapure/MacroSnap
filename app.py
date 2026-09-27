@@ -81,11 +81,15 @@ def get_best_model_name(api_key: str) -> str:
         ]
         
         priority_list = [
+            "gemini-2.0-flash-lite-preview-02-05",
+            "gemini-2.0-flash-lite-preview",
+            "gemini-2.0-flash-lite",
+            "gemini-1.5-flash-8b",
+            "gemini-1.5-flash-lite",
             "gemini-1.5-flash-latest",
             "gemini-1.5-flash",
-            "gemini-1.5-pro-latest",
-            "gemini-1.5-pro",
             "gemini-2.0-flash-exp",
+            "gemini-1.5-pro",
             "gemini-pro"
         ]
         
@@ -98,7 +102,7 @@ def get_best_model_name(api_key: str) -> str:
     except Exception:
         pass
         
-    return "gemini-1.5-flash-latest"
+    return "gemini-2.0-flash-lite"
 
 @st.cache_resource
 def get_gemini_model(api_key: str, system_instruction: str, model_name: str):
